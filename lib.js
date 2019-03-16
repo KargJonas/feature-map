@@ -1,3 +1,5 @@
+// Jonas Karg 2019
+
 // Load an image as a two-dimensional array from a url/path.
 // Each pixel is represented as a value from 0-1.
 function loadImageData(imagePath) {
@@ -149,13 +151,12 @@ function deCast(matrix) {
 function normalize(matrix) {
   const result = [];
 
+  const deCastedArray = deCast(matrix);
   const width = matrix[0].length;
   const height = matrix.length;
-  const deCastedArray = deCast(matrix);
 
   const largest = Math.max.apply(Math, deCastedArray);
   const smallest = Math.min.apply(Math, deCastedArray);
-
   const factor = largest - smallest;
 
   for (let y = 0; y < height; y++) {
